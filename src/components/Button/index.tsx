@@ -5,15 +5,15 @@ import { Container, Title, ButtonTypeStyleProps, Icon } from './styles'
 
 interface ButtonProps extends TouchableOpacityProps {
     title: string
-    type?: ButtonTypeStyleProps
+    variation?: ButtonTypeStyleProps
     icon: keyof typeof Feather.glyphMap
 }
 
-export const Button = ({ title, type = 'PRIMARY', icon, ...rest }: ButtonProps) => {
+export const Button = ({ title, variation = 'PRIMARY', icon, ...rest }: ButtonProps) => {
     return (
-        <Container type={type} {...rest}>
-            <Icon type={type} name={icon} />
-            <Title type={type}> {title} </Title>
+        <Container variation={variation} {...rest}>
+            <Icon variation={variation} name={icon} />
+            <Title variation={variation}> {title} </Title>
         </Container>
     )
 }

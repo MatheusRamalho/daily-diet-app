@@ -1,33 +1,40 @@
-import { TouchableOpacity } from 'react-native'
 import styled, { css } from 'styled-components/native'
 
 import { Status } from 'src/types/Status'
 
 interface StatusStyleProps {
-    type: Status
+    type: Status | ''
 }
 
-export const Container = styled(TouchableOpacity)<StatusStyleProps>`
-    align-items: center;
-    justify-content: center;
+export const Container = styled.View<StatusStyleProps>`
+    gap: 12px;
 
-    padding: 40px 18px;
+    height: 90px;
+    padding: 16px;
     border-radius: 8px;
 
     ${({ theme, type }) => css`
-        background-color: ${type === 'INSIDE' ? theme.COLORS.GREEN_300 : theme.COLORS.RED_300};
+        background-color: ${type === 'INSIDE'
+            ? theme.COLORS.GREEN_300
+            : type === 'OUTSIDE'
+              ? theme.COLORS.RED_300
+              : theme.COLORS.GRAY_200};
     `};
 `
 
-export const Title = styled.Text`
+export const Value = styled.Text`
+    text-align: center;
+
     ${({ theme }) => css`
         font-family: ${theme.FONT_FAMILY.BOLD};
-        font-size: ${theme.FONT_SIZE['2XL']}px;
+        font-size: ${theme.FONT_SIZE.XL}px;
         color: ${theme.COLORS.GRAY_700};
     `};
 `
 
-export const Description = styled.Text`
+export const Text = styled.Text`
+    text-align: center;
+
     ${({ theme }) => css`
         font-family: ${theme.FONT_FAMILY.REGULAR};
         font-size: ${theme.FONT_SIZE.SM}px;

@@ -5,7 +5,9 @@ import { ThemeProvider } from 'styled-components'
 
 import { defaultTheme } from '@theme/index'
 
-import { Home } from '@screens/home'
+import { Routes } from '@routes/index'
+
+import { Loading } from '@components/Loading'
 
 export default function App() {
     const [fontsLoaded] = useFonts({ NunitoSans_400Regular, NunitoSans_700Bold })
@@ -13,7 +15,7 @@ export default function App() {
     return (
         <ThemeProvider theme={defaultTheme}>
             <StatusBar barStyle="dark-content" backgroundColor="transparent" translucent />
-            {fontsLoaded && <Home />}
+            {fontsLoaded ? <Routes /> : <Loading />}
         </ThemeProvider>
     )
 }

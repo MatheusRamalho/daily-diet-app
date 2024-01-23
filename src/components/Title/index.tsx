@@ -1,9 +1,14 @@
 import { Container } from './styles'
 
-interface TitleProps {
+export interface TitleProps {
     title: string
+    isCentralized?: boolean
 }
 
-export const Title = ({ title }: TitleProps) => {
-    return <Container> {title} </Container>
+export const Title = ({ title, isCentralized = false }: TitleProps) => {
+    return (
+        <Container title={title} isCentralized={isCentralized}>
+            {title}
+        </Container>
+    )
 }
