@@ -39,7 +39,12 @@ Daily Diet é uma aplicação mobile para controle da sua dieta. Nele você pode
 
 ## 🧰 Funcionalidades
 
-- 
+- Listagem de refeições
+- Detalhes da refeição
+- Adicionar nova refeição
+- Editar refeição
+- Excluir refeição com modal verificadora
+- Estatisticas gerais da dieta com: melhor sequência,quantidade de refeições,quantidade dentro e fora da dieta.
 
 <br />
 
