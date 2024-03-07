@@ -32,20 +32,14 @@ Daily Diet é uma aplicação mobile para controle da sua dieta. Nele você pode
 - Typescript
 - Expo
 - Styled Components
+- Git
+- Github
 
 <br />
 
 ## 🧰 Funcionalidades
 
-- Listagem de categoria de produtos
-- Listagem de produtos
-- Detalhes dos produtos
-- Adicionar um ou mais produtos ao carrinho
-- Remover produtos do carrinho
-- Carrinho de compras
-- Calculo do valor do pedido automática
-- Adicionar endereço de entrega do pedido
-- Enviar pedido por api do whatsApp
+- 
 
 <br />
 
