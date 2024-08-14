@@ -1,18 +1,20 @@
-import { FlatList } from 'react-native'
+import { useEffect, useState } from 'react'
+import { SectionList } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+
+import { Button } from '@/components/Button'
+import { Percent } from '@/components/Percent'
+import { Meal } from '@/components/Meal'
+import { ListEmpty } from '@/components/ListEmpty'
+import { Title } from '@/components/Title'
+import { MealListType } from '@/types/meal'
+import { storageMealGet } from '@/storage/storageMeal'
 
 import { Container, Content } from './styles'
 
-import { Button } from '@components/Button'
-import { Percent } from '@components/Percent'
-import { Meal } from '@components/Meal'
-import { ListEmpty } from '@components/ListEmpty'
-import { Title } from '@components/Title'
-
-import { MEAL_DATA } from '@storage/Meal'
-
-export const Home = () => {
+export function Home() {
     const navigation = useNavigation()
+    const [meals, setMeals] = useState<MealListType[]>([])
 
     const handleStatistic = () => {
         navigation.navigate('statistic')
@@ -25,6 +27,15 @@ export const Home = () => {
     const handleMealDetails = (id: string) => {
         navigation.navigate('meal', { id })
     }
+
+    useEffect(() => {
+        async function loadMeals() {
+            const storedMeals = await storageMealGet()
+            setMeals(storedMeals)
+        }
+
+        loadMeals()
+    }, [])
 
     return (
         <Container>
@@ -43,10 +54,10 @@ export const Home = () => {
             </Content>
 
             <Content>
-                <Title title="12.08.22" />
-                <FlatList
-                    data={MEAL_DATA}
+                <SectionList
+                    sections={meals}
                     keyExtractor={(item) => item.id}
+                    renderSectionHeader={({ section }) => <Title title={section.title} />}
                     renderItem={({ item }) => (
                         <Meal
                             id={item.id}
@@ -56,7 +67,7 @@ export const Home = () => {
                             onPress={() => handleMealDetails(item.id)}
                         />
                     )}
-                    contentContainerStyle={MEAL_DATA.length === 0 && { flex: 1 }}
+                    contentContainerStyle={meals.length === 0 && { flex: 1 }}
                     ListEmptyComponent={() => <ListEmpty message="Que tal cadastrar a primeira refeição" />}
                     showsVerticalScrollIndicator={false}
                 />

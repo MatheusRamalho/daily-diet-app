@@ -1,13 +1,11 @@
+import { Status } from '@/types/status'
+import { Button } from '@/components/Button'
+import greenImg from '@/assets/imgs/illustration.png'
+import redImg from '@/assets/imgs/illustration2.png'
+
 import { Container, Desc, Illustration, Title } from './styles'
 
-import { Status } from 'src/types/Status'
-
-import { Button } from '@components/Button'
-
-import greenImg from '@assets/imgs/illustration.png'
-import redImg from '@assets/imgs/illustration2.png'
-
-export const Feedback = () => {
+export function Feedback() {
     const status: Status = 'INSIDE'
 
     return (

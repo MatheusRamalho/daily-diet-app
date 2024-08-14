@@ -9,7 +9,7 @@ interface InputProps extends TextInputProps {
     label: string
 }
 
-export const Input = ({ label, inputRef, ...rest }: InputProps) => {
+export function Input({ label, inputRef, ...rest }: InputProps) {
     const { COLORS } = useTheme()
 
     return (

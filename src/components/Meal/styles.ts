@@ -1,7 +1,7 @@
 import { TouchableOpacity } from 'react-native'
 import styled, { css } from 'styled-components/native'
 
-import { Status } from 'src/types/Status'
+import { Status } from '@/types/status'
 
 interface StatusStyleProps {
     type: Status
@@ -54,10 +54,10 @@ export const Name = styled.Text`
     `};
 `
 
-export const StatusColor = styled.Text<StatusStyleProps>`
+export const StatusColor = styled.View<StatusStyleProps>`
     width: 14px;
     height: 14px;
-    border-radius: 999px;
+    border-radius: 50%;
 
     ${({ theme, type }) => css`
         background-color: ${type === 'INSIDE' ? theme.COLORS.GREEN_500 : theme.COLORS.RED_500};

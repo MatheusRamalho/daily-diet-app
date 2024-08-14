@@ -1,7 +1,7 @@
 import { SafeAreaView } from 'react-native-safe-area-context'
 import styled, { css } from 'styled-components/native'
 
-import { Status } from 'src/types/Status'
+import { Status } from '@/types/status'
 
 interface StatusStyleProps {
     type: Status

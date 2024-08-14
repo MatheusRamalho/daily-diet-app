@@ -2,7 +2,7 @@ import { TouchableOpacityProps } from 'react-native'
 
 import { Container, Divider, Hour, Name, StatusColor } from './styles'
 
-import { Status } from 'src/types/Status'
+import { Status } from '@/types/status'
 
 interface MealProps extends TouchableOpacityProps {
     id: string
@@ -11,7 +11,7 @@ interface MealProps extends TouchableOpacityProps {
     status: Status
 }
 
-export const Meal = ({ id, hour, name, status, ...rest }: MealProps) => {
+export function Meal({ id, hour, name, status, ...rest }: MealProps) {
     return (
         <Container {...rest} id={id}>
             <Hour> {hour} </Hour>

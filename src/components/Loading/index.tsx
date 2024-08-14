@@ -1,6 +1,6 @@
 import { Container, LoadIndicator } from './styles'
 
-export const Loading = () => {
+export function Loading() {
     return (
         <Container>
             <LoadIndicator />

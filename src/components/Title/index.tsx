@@ -5,7 +5,7 @@ export interface TitleProps {
     isCentralized?: boolean
 }
 
-export const Title = ({ title, isCentralized = false }: TitleProps) => {
+export function Title({ title, isCentralized = false }: TitleProps) {
     return (
         <Container title={title} isCentralized={isCentralized}>
             {title}

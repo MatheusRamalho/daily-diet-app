@@ -13,9 +13,19 @@ export const Header = styled.View`
 export const Content = styled.View`
     flex: 1;
     gap: 16px;
+    justify-content: space-between;
 
     padding: 24px;
     border-top-right-radius: 32px;
     border-top-left-radius: 32px;
     background-color: ${({ theme }) => theme.COLORS.GRAY_100};
+    padding-bottom: 100px;
+`
+
+export const Infos = styled.View`
+    gap: 24px;
+`
+
+export const InfosButtons = styled.View`
+    gap: 8px;
 `

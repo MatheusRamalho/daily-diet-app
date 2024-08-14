@@ -1,4 +1,4 @@
-import { Status } from 'src/types/Status'
+import { Status } from '@/types/status'
 
 import { Container, Value, Text } from './styles'
 
@@ -8,7 +8,7 @@ interface StatisticItemProps {
     status?: Status
 }
 
-export const StatisticItem = ({ value, desc, status }: StatisticItemProps) => {
+export function StatisticItem({ value, desc, status }: StatisticItemProps) {
     return (
         <Container type={status || ''}>
             <Value> {value} </Value>

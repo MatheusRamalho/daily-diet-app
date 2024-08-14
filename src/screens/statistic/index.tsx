@@ -1,10 +1,10 @@
+import { Percent } from '@/components/Percent'
+import { StatisticItem } from '@/components/StatisticItem'
+import { Title } from '@/components/Title'
+
 import { Container, Content, ContentFlex } from './styles'
 
-import { Percent } from '@components/Percent'
-import { StatisticItem } from '@components/StatisticItem'
-import { Title } from '@components/Title'
-
-export const Statistic = () => {
+export function Statistic() {
     return (
         <Container>
             <Percent value="90,86%" status="INSIDE" description="das refeições dentro da dieta" />

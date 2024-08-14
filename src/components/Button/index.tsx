@@ -9,7 +9,7 @@ interface ButtonProps extends TouchableOpacityProps {
     icon: keyof typeof Feather.glyphMap
 }
 
-export const Button = ({ title, variation = 'PRIMARY', icon, ...rest }: ButtonProps) => {
+export function Button({ title, variation = 'PRIMARY', icon, ...rest }: ButtonProps) {
     return (
         <Container variation={variation} {...rest}>
             <Icon variation={variation} name={icon} />

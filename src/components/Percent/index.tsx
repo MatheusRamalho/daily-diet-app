@@ -2,7 +2,7 @@ import { TouchableOpacityProps } from 'react-native'
 
 import { Container, Description, Title } from './styles'
 
-import { Status } from 'src/types/Status'
+import { Status } from '@/types/status'
 
 interface PercentProps extends TouchableOpacityProps {
     value: string
@@ -10,7 +10,7 @@ interface PercentProps extends TouchableOpacityProps {
     status: Status
 }
 
-export const Percent = ({ value, description, status, ...rest }: PercentProps) => {
+export function Percent({ value, description, status, ...rest }: PercentProps) {
     return (
         <Container {...rest} type={status}>
             <Title> {value} </Title>

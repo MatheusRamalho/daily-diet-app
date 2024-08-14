@@ -4,7 +4,7 @@ interface ListEmptyProps {
     message: string
 }
 
-export const ListEmpty = ({ message }: ListEmptyProps) => {
+export function ListEmpty({ message }: ListEmptyProps) {
     return (
         <Container>
             <Message> {message} </Message>
